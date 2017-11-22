@@ -5,7 +5,7 @@ const exphbs = require("express-handlebars");
 //creates the express server for node
 const app = express();
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // Serve static content for the app from the "public" directory in the application directory.
