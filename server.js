@@ -29,7 +29,7 @@ app.set("view engine", "handlebars");
 // Must be placed below const app otherwise will return undefined!
 //Sample routes not yet created:
 //require("./app/routing/apiRoutes")(app);
-//require("./app/routing/htmlRoutes")(app);
+require("./controllers/htmlRoutes.js")(app);
 
 
 
