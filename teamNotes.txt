@@ -1,4 +1,5 @@
-Team Use this file to send notes to the team.  Use this for permanent notes that may be useful to remind team members.  Otherwise, use Slack as usual.  
+Team Use this file to send notes to the team.  Use this for permanent notes that may be useful to remind team members.  Otherwise, use Slack as usual. Put the newest stuff on top so it's upfront for everyone to see.  
+
 
 
 
@@ -22,13 +23,18 @@ Longer Explanation:
     -We create multiple branches because it makes it very easy to go back to a point in time, when you KNOW your code was working correctly.  Also, it's a pretty convenient place to push you code to the rest of the team--when your new feature is working.  Though, use your best judgment of when to push (smaller code pushes are better than large ones)
     -Work on your code as you normally would--committing often.  
 
-*Work on the branch you intend work on as usual.  When you finish a feature 
+*The first time you push it will create a new branch remote branch in Github.  
+    -Before you push do a git pull from the master branch to get new content and make sure it works w/ your latest code.  
+    -Again, if your code is having issues, resolve before you merge to the testing branch.  
+    -If your branch is working correctly, you can do a manual merge request from that branch (make sure it's working correctly). 
+    -After creating the merge request, and it's time to work on a new issue you can just create a new branch from the last branch.  Keep in mind if you ever want to get back on master and upload the latest changes you can easily switch to your master branch and do a git pull on any branch you want but if you pull from the remote (Github) master branch it won't have your latest material until it is merged into master.  If you would like to merge 2 local branches: [ git checkout branchYouWant (ex:master) ] then... [ git merge desiredContentBranch ]
+    -Rinse/repeat for new branches.
+
+*If at any point you're having issues, create a new branch from that point and then you are free to try a new command etc. 
+
+*Lastly, to go back to your last commit point (hopefully, the last point you know your code was working in the branch) use [ git checkout -- .] This will disregard all your changes made since you last made a commit.  I use this often, but obviously is dangerous if you do this by mistake.  
+    
 
 
-Testing2.
 
-chance master testkkjfjkf
 
-When you got to manually create a pull request, click on the branch pull down...search for testing.  Switch to that.  It may ask "Do you want to switch base branch?" Confirm...
-
-git push --set-upstream origin chance-master
