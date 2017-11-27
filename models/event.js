@@ -9,7 +9,7 @@ var sequelize = require("../config/connection.js");
 var Event = sequelize.define("event", {
     eventName: Sequelize.STRING,
     category: Sequelize.STRING,
-    date: Sequelize.INTEGER,
+    date: Sequelize.DATE,
 }, {
     timestamps: true
 });
