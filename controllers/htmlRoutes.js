@@ -8,14 +8,17 @@ module.exports = (app) => {
         //res.sendFile(path.join(__dirname, "../public/survey.html"));
         //res.send("Hello Test!");
         res.render('index', {
-            //burgerInfo
+            
         });
     });
 
 
-    app.get("/test", (req, res) => {
+    app.get("/register", (req, res) => {
         //res.sendFile(path.join(__dirname, "../public/survey.html"));
-        res.send("Testing Test route!");
+        //res.send("Testing Test route!");
+        res.render('register', {
+            
+        });
 
     });
 
