@@ -7,7 +7,10 @@ module.exports = (app) => {
         });
     
         app.post("/api/userDashboard", (req, res) => {
-    
+            
+            const newEventName = req.body.newEventDescription;
+
+
     
             // const newUserSubmission = req.body.scores;
             // const scoreComparisonArray = [];
