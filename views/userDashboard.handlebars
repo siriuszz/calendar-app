@@ -31,14 +31,17 @@
 
 <script type="text/javascript">
 
+const currentURL = window.location.origin;
+const newEventName = "";
 $.post(currentURL + "/api/userDashboard", newEventName, function (data) {
-
+    
+    
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#newEventNameInput").text(data.newEventName);
                     //$("#matchImg").attr("src", data.photo);
                     //$("#matchImg").width(550);
                     //$("#matchImg").height(400);
-                    console.log(newEventName);
+                    console.log(data.newEventName);
                     // Show the modal with the best match 
                     //$("#resultsModal").modal('toggle');
 
