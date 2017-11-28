@@ -14,9 +14,14 @@ module.exports = (app) => {
 
 
     app.get("/register", (req, res) => {
-        //res.sendFile(path.join(__dirname, "../public/survey.html"));
-        //res.send("Testing Test route!");
         res.render('register', {
+            
+        });
+
+    });
+    //Where user adds in a todo, views a todo, etc. 
+    app.get("/userDashboard", (req, res) => {
+        res.render('userDashboard', {
             
         });
 
