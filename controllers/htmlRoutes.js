@@ -13,7 +13,7 @@ module.exports = (app) => {
     app.get("/test", (req, res) => {
         //res.sendFile(path.join(__dirname, "../public/survey.html"));
         res.send("Testing Test route!");
-        
+
     });
 
     // If no matching route is found, we default to home
@@ -22,7 +22,5 @@ module.exports = (app) => {
         //res.send("this is the catch all route");
         res.redirect("/");
     });
-
-
 
 };
