@@ -27,9 +27,8 @@ app.set("view engine", "handlebars");
 // points our server to our different "route" files.
 // This gives the server a "map" to respond when users visit or request data from various URLs.
 // Must be placed below const app otherwise will return undefined!
-//Sample routes not yet created:
-//require("./app/routing/apiRoutes")(app);
-//require("./app/routing/htmlRoutes")(app);
+require("./controllers/apiRoutes")(app);
+require("./controllers/htmlRoutes.js")(app);
 
 
 
