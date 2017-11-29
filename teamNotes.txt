@@ -1,7 +1,7 @@
 Team Use this file to send notes to the team.  Use this for permanent notes that may be useful to remind team members.  Otherwise, use Slack as usual. Put the newest stuff on top so it's upfront for everyone to see.  
 
 
-
+Testing! 
 
 I use ES6 syntax: It's for  shorter code and only impacts anonymous functions.  One unique thing, it is block scoped.  Google for details if interested but it basically makes "this" and other code behave as you would typically expect it to (it's a fix).  Named functions work the same as before.
 (() => {
