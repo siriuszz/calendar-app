@@ -1,0 +1,30 @@
+module.exports = function(sequelize, DataTypes) {
+    var Event = sequelize.define("Event", {
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        description: {
+            type: DataTypes.TEXT
+        },
+        date: {
+            type: DataTypes.DATE
+        },
+        public: {
+            type: DataTypes.BOOLEAN,
+        }
+    });
+
+    Event.associate = function(models) {
+        Event.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+    return Event;
+};
