@@ -21,6 +21,10 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.1-security",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.23.1"
   }
 }
