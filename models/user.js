@@ -3,9 +3,9 @@ module.exports = function(sequelize, DataTypes) {
         name: DataTypes.STRING
     });
 
-    Author.associate = function(models) {
-
-        Author.hasMany(models.Event, {
+    User.associate = function(models) {
+        //Associating an event with a user
+        User.hasMany(models.Event, {
             onDelete: "cascade"
         });
     };
