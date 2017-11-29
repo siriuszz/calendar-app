@@ -34,8 +34,13 @@ require("./controllers/apiRoutes")(app);
 require("./controllers/htmlRoutes.js")(app);
 
 
+//=====STAR=====I don't think we need this. It worked with the code below.
+// app.listen(PORT, () => {
+//     console.log("App listening on PORT: " + PORT);
+// });
 
-app.listen(PORT, () => {
-    console.log("App listening on PORT: " + PORT);
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
 });
-
