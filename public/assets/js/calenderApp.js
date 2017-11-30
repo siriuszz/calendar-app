@@ -1,12 +1,27 @@
-$(document).ready(function() {
-    const newEventNameInput = $("#newEventNameInput");
+$(document).ready(function () {
+    const newEvent = {
+        newEventNameInput: $("#newEventNameInput").val()
 
-    function showIt() {
-        console.log(newEventNameInput);
-    }
-    showIt();
+    };
+
+    $("#submit").on("click", (() => {
+        const currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/userDashboard", newEvent, function () {
+            
+            console.log(data.newEventNameInput);
+        });
+        console.log(newEvent);
+    }));
+
+    
 
 });
+
+
+
+//module.exports = newEvent.newEventNameInput;
+
 
 
 
