@@ -1,16 +1,10 @@
-//console.log("tesing Js"); this works!
+
 
 
 
 $("#submit").on("click", ((event) => {
     event.preventDefault();
-    //const currentURL = window.location.origin;
-
-    // $.post(currentURL + "/api/userDashboard", newEvent, function () {
-
-    //     console.log(data.newEventNameInput);
-    // });
-    // console.log(newEvent);
+    
 
     const newEvent = {
         newEventNameInput: $("#newEventNameInput").val().trim(),
