@@ -16,7 +16,8 @@ $("#submit").on("click", ((event) => {
         newEventNameInput: $("#newEventNameInput").val().trim(),
         newEventDateInput: $("#newEventDateInput").val().trim(),
         newEventCategoryInput: $("#newEventCategoryInput").val().trim(),
-        //needs the public check mark input...
+        //checks to see if the Public checkbox is check.  If so it will return true and versa
+        newEventPublicCheckbox: $("#publicCheck").is(':checked'),
         newEventDescriptionInput: $("#newEventDescriptionInput").val().trim(),
     };
 
