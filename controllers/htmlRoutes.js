@@ -26,7 +26,7 @@ module.exports = (app) => {
         });
 
     });
-
+    //Show events page. Where we plan to show the created events. 
     app.get("/showEvents", (req, res) => {
         res.render('showEvents', {
             
