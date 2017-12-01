@@ -36,8 +36,8 @@ module.exports = (app) => {
                 description: req.body.newEventDescriptionInput,
                 public: req.body.newEventPublicCheckbox
             })
-            .then(function (dbPost) {
-                res.json(dbPost);
+            .then(function () {
+                //res.json(dbPost);
             });
 
 
