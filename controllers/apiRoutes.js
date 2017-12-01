@@ -9,10 +9,11 @@ module.exports = (app) => {
 
 
     app.get("/api/userDashboard", (req, res) => {
-        //res.json(friends);
-        console.log("test");
+        
+        console.log("testing: GET api/userDashboard Route");
 
-        res.json(newEvent);
+        
+        res.json(req.body); //This returns an empty right now since not doing anything yet
     });
 
 
