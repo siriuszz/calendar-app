@@ -2,6 +2,29 @@ Team Use this file to send notes to the team.  Use this for permanent notes that
 
 
 
+Testing! 
+
+I use ES6 syntax: It's for  shorter code and only impacts anonymous functions.  One unique thing, it is block scoped.  Google for details if interested but it basically makes "this" and other code behave as you would typically expect it to (it's a fix).  Named functions work the same as before.
+(() => {
+})
+
+vs.
+
+function() {
+
+}
+
+const & let
+
+let behaves almost exactly like var.  
+const is used for values that will not change (few exceptions: a const array's values inside the array can change, etc. but the actual array it points to cannot change. Think of it as what the "constant" points to cannot change).
+
+This is the new way you will use JS, but I particularly like it because it helps prevent errors and conveys to the reader (you or someone else) that the "constant" will not change.  This makes the code a lot easier and quicker to figure out because you know what const points to will never change and if let is used the value SHOULD change.  
+
+
+
+
+
 
 Git Quick Summary: 
 *Pull from origin master to get the latest changes that are ready to go.

@@ -3,7 +3,6 @@ const path = require("path");
 
 
 
-
 module.exports = (app) => {
     
         // displays JSON of all the friends
@@ -14,7 +13,6 @@ module.exports = (app) => {
         });
     
 
-
             res.json(newEventName);
         });
         
@@ -22,6 +20,10 @@ module.exports = (app) => {
         app.post("/api/userDashboard", (req, res) => {
             
             const newEventName = req.body.newEventDescription;
+
+
+
+
 
 
     

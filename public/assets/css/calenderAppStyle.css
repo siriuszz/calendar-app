@@ -35,7 +35,7 @@ hr {
 }
 
 hr:before {
-    /* Not really supposed to work, but does */
+    
     display: block;
     content: "";
     height: 30px;
