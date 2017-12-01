@@ -9,11 +9,11 @@ module.exports = (app) => {
 
 
     app.get("/api/userDashboard", (req, res) => {
-        
+
         console.log("testing: GET api/userDashboard Route");
 
-        
-        res.json(req.body); //This returns an empty right now since not doing anything yet
+
+        res.json(req.body); //This returns an empty object right now since not doing anything yet
     });
 
 
@@ -31,4 +31,3 @@ module.exports = (app) => {
 
     });
 };
-
