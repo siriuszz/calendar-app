@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
+
 //creates the express server for node
 const app = express();
 
@@ -65,10 +66,11 @@ app.set("view engine", "handlebars");
 // Must be placed below const app otherwise will return undefined!
 
 
-var api = require("./controllers/apiRoutes");
-app.use('/', api);
 
-// require("./controllers/htmlRoutes.js")(app);
+
+require("./controllers/apiRoutes.js")(app);
+require("./controllers/htmlRoutes.js")(app);
+
 
 
 //=====STAR=====I don't think we need this. It worked with the code below.
