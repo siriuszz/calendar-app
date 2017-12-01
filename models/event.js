@@ -1,20 +1,31 @@
-// Dependencies
-// =============================================================
+module.exports = function(sequelize, DataTypes) {
+    var Event = sequelize.define("Event", {
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        description: {
+            type: DataTypes.TEXT
+        },
+        date: {
+            type: DataTypes.DATE
+        },
+        public: {
+            type: DataTypes.BOOLEAN,
+        }
+    });
 
-var Sequelize = require("sequelize");
+    Event.associate = function(models) {
+        //Event belongs to a user
+        Event.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
-var sequelize = require("../config/connection.js");
-
-// Creates an "Event" model that matches up with DB
-var Event = sequelize.define("event", {
-    eventName: Sequelize.STRING,
-    category: Sequelize.STRING,
-    date: Sequelize.DATE,
-}, {
-    timestamps: true
-});
-
-// Syncs with DB
-Event.sync();
-
-module.exports = Event;
+    return Event;
+};
