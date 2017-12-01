@@ -26,31 +26,13 @@
                     <label for="newEventDescription">Description:</label>
                     <textarea class="form-control" rows="5" id="newEventDescriptionInput"></textarea>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default" id="submit">Submit</button>
             </form>
         </div>
     </div>
 </div>
 
 
-<script type="text/javascript">
 
-const currentURL = window.location.origin;
-const newEventName = "";
-$.post(currentURL + "/api/userDashboard", newEventName, function (data) {
-    
-    
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#newEventNameInput").text(data.newEventName);
-                    //$("#matchImg").attr("src", data.photo);
-                    //$("#matchImg").width(550);
-                    //$("#matchImg").height(400);
-                    console.log(data.newEventName);
-                    // Show the modal with the best match 
-                    //$("#resultsModal").modal('toggle');
-
-                });
-
-
-</script>
+<script src="assets/js/updateEvents.js"> </script>
 

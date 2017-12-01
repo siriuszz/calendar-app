@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 
+
+
 //creates the express server for node
 const app = express();
 
@@ -30,7 +32,7 @@ app.set("view engine", "handlebars");
 // points our server to our different "route" files.
 // This gives the server a "map" to respond when users visit or request data from various URLs.
 // Must be placed below const app otherwise will return undefined!
-require("./controllers/apiRoutes")(app);
+require("./controllers/apiRoutes.js")(app);
 require("./controllers/htmlRoutes.js")(app);
 
 
