@@ -18,12 +18,15 @@ module.exports = (app) => {
     
 
     app.post("/api/updateEvents", (req, res) =>{
-        console.log("testing");
+        
+        console.log("testing api/updateEvents");
         console.log(req.body);
 
         res.json(req.body);
+        
 
         // req.json(newEvent);
         // req.end();
+        
     });
 };
