@@ -19,9 +19,16 @@ module.exports = (app) => {
         });
 
     });
-    //Where user adds in a todo, views a todo, etc. 
+    //Where user adds in a new event. 
     app.get("/userDashboard", (req, res) => {
         res.render('userDashboard', {
+            
+        });
+
+    });
+
+    app.get("/showEvents", (req, res) => {
+        res.render('showEvents', {
             
         });
 
