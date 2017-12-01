@@ -7,12 +7,13 @@
     <br>
     <!-- Pure UI framework -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <!-- Google font(s) to choose from -->
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Diplomata+SC|Merienda|Pacifico|Ubuntu|VT323" rel="stylesheet">
-    <link rel="stylesheet" href="calendar.css" style=text/css>
+    <link rel="stylesheet" style="text/css" href="public/assets/css/calenderAppStyle.css">
 </head>
 
 <body>
-    <h1>Calender</h1>
+    <h1>Calendar</h1>
     <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
         <a href="#" class="pure-menu-link pure-menu-heading">Calendar</a>
         <ul class="pure-menu-list">
@@ -27,11 +28,11 @@
     <div>
         <table class="pure-table pure-table-bordered">
             <thead>
-                <tr>
+                <tr class="categories">
                     <th>Date</th>
                     <th>Event</th>
                     <th>Category</th>
-                    <th>User</th>
+                    <th class="Users">User</th>
                     <th>Description</th>
                     <th>Public</th>
                 </tr>
@@ -72,8 +73,8 @@
             </tbody>
         </table>
     </div>
-    <br>
-    <button class="pure-button">
+    <hr>
+    <button class="pure-button pure-button-primary">
         <i class="fa fa-cog"></i> Add
     </button>
 
