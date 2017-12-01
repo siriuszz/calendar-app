@@ -29,5 +29,17 @@ module.exports = (app) => {
         // req.json(newEvent);
         // req.end();
 
+
+
+        db.Event.create({
+                title: req.body.newEventNameInput,
+                description: req.body.newEventDescriptionInput,
+                public: req.body.newEventPublicCheckbox
+            })
+            .then(function (dbPost) {
+                res.json(dbPost);
+            });
+
+
     });
 };
