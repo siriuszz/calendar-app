@@ -1,13 +1,13 @@
-
 const path = require("path");
 
+const db = require("../models");
 
 
 
 module.exports = (app) => {
 
 
-    // displays JSON of all the friends
+
     app.get("/api/userDashboard", (req, res) => {
         //res.json(friends);
         console.log("test");
@@ -15,19 +15,19 @@ module.exports = (app) => {
         res.json(newEvent);
     });
 
-    // app.post("/api/userDashboard", (req, res) => {
 
-    //     //const newEventName = req.body.newEventDescription;
 
-    // });
-// api/updateEvents
-    app.post("/api/updateEvents", (req, res) =>{
-        console.log("testing");
+    app.post("/api/updateEvents", (req, res) => {
+
+        console.log("testing api/updateEvents");
         console.log(req.body);
 
         res.json(req.body);
 
+
         // req.json(newEvent);
         // req.end();
+
     });
 };
+
