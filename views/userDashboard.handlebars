@@ -14,10 +14,13 @@
                     <label for="newEventDate">Date </label>
                     <input type="text" class="form-control" id="newEventDateInput">
                 </div>
+<<<<<<< HEAD
+=======
                 <div class="form-group">
                     <label for="newEventCategory">Category </label>
                     <input type="text" class="form-control" id="newEventCategoryInput">
                 </div>
+>>>>>>> master
                 <div class="checkbox">
                     <label>
                         <input type="checkbox"> Public </label>
@@ -35,22 +38,35 @@
 
 <script type="text/javascript">
 
+<<<<<<< HEAD
+$.post(currentURL + "/api/userDashboard", newEventName, function (data) {
+
+=======
 const currentURL = window.location.origin;
 const newEventName = "";
 $.post(currentURL + "/api/userDashboard", newEventName, function (data) {
     
     
+>>>>>>> master
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#newEventNameInput").text(data.newEventName);
                     //$("#matchImg").attr("src", data.photo);
                     //$("#matchImg").width(550);
                     //$("#matchImg").height(400);
+<<<<<<< HEAD
+                    console.log(newEventName);
+=======
                     console.log(data.newEventName);
+>>>>>>> master
                     // Show the modal with the best match 
                     //$("#resultsModal").modal('toggle');
 
                 });
 
 
+<<<<<<< HEAD
+</script>
+=======
 </script>
 
+>>>>>>> master
