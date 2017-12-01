@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "wishes_db",
+    "database": "gtbc_calendar",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
