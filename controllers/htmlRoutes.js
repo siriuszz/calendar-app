@@ -27,11 +27,11 @@ module.exports = (app) => {
 
     });
 
-    // If no matching route is found, we default to home
-    // app.get("*", (req, res) => {
-    //     //res.sendFile(path.join(__dirname, "../public/home.html"));
-    //     //res.send("this is the catch all route");
-    //     res.redirect("/");
-    // });
+    //If no matching route is found, we default to home
+    app.get("*", (req, res) => {
+        //res.sendFile(path.join(__dirname, "../public/home.html"));
+        //res.send("this is the catch all route");
+        res.redirect("/");
+    });
 
 };
