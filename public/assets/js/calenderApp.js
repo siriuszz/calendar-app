@@ -1,36 +1,40 @@
-$(document).ready(function () {
-    const newEvent = {
-        newEventNameInput: $("#newEventNameInput").val()
+// $(document).ready(function () {
+//     const newEvent = {
+//         newEventNameInput: $("#newEventNameInput").val(),
+//         newEventDateInput: $("#newEventDateInput").val(),
+//         newEventCategoryInput: $("#newEventCategoryInput").val(),
+//         //needs the public check mark input...
+//         newEventDescriptionInput: $("#newEventDescriptionInput").val(),
 
-    };
+//     };
 
-    $("#submit").on("click", ((event) => {
-        event.preventDefault();
-        const currentURL = window.location.origin;
+//     $("#submit").on("click", ((event) => {
+//         event.preventDefault();
+//         const currentURL = window.location.origin;
 
-        // $.post(currentURL + "/api/userDashboard", newEvent, function () {
+//         // $.post(currentURL + "/api/userDashboard", newEvent, function () {
 
-        //     console.log(data.newEventNameInput);
-        // });
-        // console.log(newEvent);
+//         //     console.log(data.newEventNameInput);
+//         // });
+//         // console.log(newEvent);
 
-        $.ajax("/api/userDashboard", {
-            type: "POST",
-            data: newEvent
-        }).then(
-            function () {
-                console.log("created new event");
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
-    }));
+//         $.ajax("/api/userDashboard", {
+//             type: "POST",
+//             data: newEvent
+//         }).then(
+//             function () {
+//                 console.log("created new event");
+//                 // Reload the page to get the updated list
+//                 location.reload();
+//             }
+//         );
+//     }));
 
     
 
 
 
-});
+// });
 
 
 

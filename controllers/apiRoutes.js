@@ -1,5 +1,5 @@
 const path = require("path");
-//const calenderAppScriptFile = require("../public/assets/js/calenderApp.js");
+//const calenderAppScriptFile = require("../public/assets/js/updateEvents.js");
 
 
 
@@ -13,15 +13,19 @@ module.exports = (app) => {
         res.json(newEvent);
     });
 
-    app.post("/api/userDashboard", (req, res) => {
+    // app.post("/api/userDashboard", (req, res) => {
 
-        //const newEventName = req.body.newEventDescription;
+    //     //const newEventName = req.body.newEventDescription;
 
+    // });
+// api/updateEvents
+    app.post("/api/updateEvents", (req, res) =>{
+        console.log("testing");
+        console.log(req.body);
 
+        res.json(req.body);
 
-
-
-
-
+        // req.json(newEvent);
+        // req.end();
     });
 };
