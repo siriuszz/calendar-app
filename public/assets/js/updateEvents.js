@@ -1,10 +1,6 @@
-
-
-
-
 $("#submit").on("click", ((event) => {
     event.preventDefault();
-    
+
 
     const newEvent = {
         newEventNameInput: $("#newEventNameInput").val().trim(),
@@ -24,15 +20,14 @@ $("#submit").on("click", ((event) => {
 
 
             console.log(newEvent);
-            
+
             //When you add this will redirect to showEvents page: to show all our events
             window.location.replace('/showEvents');
 
         });
 
-    
 
-    
+
+
 
 }));
-
