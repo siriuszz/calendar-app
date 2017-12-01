@@ -1,55 +1,52 @@
-const path = require("path");
+// routes/index.js
+
+const express = require('express');
+const passport = require('passport');
+const router = express.Router();
+
+const env = {
+  AUTH0_CLIENT_ID: 'wFzAgdYyUP8ndKct9jPdvnduGz0i6YSf',
+  AUTH0_DOMAIN: 'kishanpatel.auth0.com',
+  AUTH0_CALLBACK_URL: 'http://localhost:3000/callback'
+};
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index');
+});
+
+// Perform the login
+router.get(
+  '/login',
+  passport.authenticate('auth0', {
+    clientID: env.AUTH0_CLIENT_ID,
+    domain: env.AUTH0_DOMAIN,
+    redirectUri: env.AUTH0_CALLBACK_URL,
+    audience: 'https://' + env.AUTH0_DOMAIN + '/userinfo',
+    responseType: 'code',
+    scope: 'openid'
+  }),
+  function(req, res) {
+    res.redirect('/');
+  }
+);
+
+// Perform session logout and redirect to homepage
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
+
+// Perform the final stage of authentication and redirect to '/user'
+router.get(
+  '/callback',
+  passport.authenticate('auth0', {
+    failureRedirect: '/'
+  }),
+  function(req, res) {
+    res.redirect(req.session.returnTo || '/user');
+  }
+);
 
 
-
-module.exports = (app) => {
-    
-        // displays JSON of all the friends
-        app.get("/api/userDashboard", (req, res) => {
-            //res.json(friends);
-            console.log("test");
-
-            res.json(newEventName);
-        });
-        
-        app.post("/api/userDashboard", (req, res) => {
-            
-            const newEventName = req.body.newEventDescription;
-
-
-
-
-    
-            // const newUserSubmission = req.body.scores;
-            // const scoreComparisonArray = [];
-            // const friendCount = 0;
-            // //index position for best match comparison 
-            // let bestScoreMatch = 0;
-            // //goes through all the current friends 
-            // for (let i = 0; i < friends.length; i++) {
-            //     let scoresDiff = 0;
-            //     //goes through scores to compare friends
-            //     for (let j = 0; j < newUserSubmission.length; j++) {
-            //         scoresDiff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(newUserSubmission[j])));
-    
-            //     }
-            //     //pushes each comparison into the scoresComparisonArray 
-            //     scoreComparisonArray.push(scoresDiff);
-            // }
-            // //Go through all the comparisons and find the one w/ the least difference aka the best match
-            // for (let i = 0; i < scoreComparisonArray.length; i++) {
-            //     if (scoreComparisonArray[i] <= scoreComparisonArray[bestScoreMatch]) {
-            //         bestScoreMatch = i;
-            //     }
-            // }
-    
-            // //pick the best match w/ friend
-            // const bestMatchPick = friends[bestScoreMatch];
-            // res.json(bestMatchPick);
-    
-            // //submits user info into friends array w/ the friend objects
-            // friends.push(req.body);
-    
-    
-        });
-    };
+module.exports = router;
