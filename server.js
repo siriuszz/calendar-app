@@ -68,7 +68,8 @@ app.set("view engine", "handlebars");
 
 
 
-require("./controllers/apiRoutes.js")(app);
+const apiRoutes = require("./controllers/apiRoutes.js");
+app.use(apiRoutes);
 require("./controllers/htmlRoutes.js")(app);
 
 
