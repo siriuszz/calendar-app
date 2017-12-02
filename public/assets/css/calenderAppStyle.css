@@ -2,6 +2,7 @@ body {
     background-color: rgb(171, 218, 171);
     background: url("http://jackalope-larp.com/wp-content/uploads/2017/08/calendar-1024x576.jpg");
     background-size: cover;
+    background-position: center;
     font-family: "Ubuntu";
     padding: 0 20rem 0 20rem;
 }
@@ -15,6 +16,10 @@ h1 {
     color: rgb(7, 0, 2);
 }
 
+html {
+    height: 100%;
+}
+
 .categories {
     color: rgb(224, 0, 22);
 }
@@ -25,7 +30,6 @@ p {
 
 hr {
     overflow: visible;
-
     height: 30px;
     border-style: solid;
     border-color: black;
@@ -34,7 +38,6 @@ hr {
 }
 
 hr:before {
-
     display: block;
     content: "";
     height: 30px;
@@ -56,5 +59,4 @@ hr:before {
 /* CP added this. It's just dummy code to display our Events... */
 #eventsDisplayContainer {
     background-color: black;
-
 }
