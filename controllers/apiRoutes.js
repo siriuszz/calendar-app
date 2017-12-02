@@ -42,6 +42,7 @@ module.exports = (app) => {
         db.Event.create({
                 title: req.body.newEventNameInput,
                 description: req.body.newEventDescriptionInput,
+                date: req.body.newEventDateInput,
                 public: req.body.newEventPublicCheckbox
             })
             .then(function () {
