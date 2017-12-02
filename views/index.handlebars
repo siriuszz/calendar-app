@@ -8,11 +8,11 @@
             <form>
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" placeholder="Email address" class="form-control" id="email" required="">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
+                    <input type="password" placeholder="Password" class="form-control" id="pwd" pattern=".{5,12}" required title="5 to 10 characters">
                 </div>
                 <div class="checkbox">
                     <label>
