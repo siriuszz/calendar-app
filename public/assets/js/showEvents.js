@@ -5,14 +5,14 @@ $(document).ready(function () {
 
     $.get("/api/events/", function (data) {
         //console.log(data.id);
-        $("#displayAllEventsSection").append("<h1>" + data[0].title );
+        $("#displayAllEventsSection").append("<h1>" + data[0].title);
 
         const displayData = data;
         displayData.forEach((object) => {
-            $("#displayAllEventsSection").append("<h1>" + object.title );
+            $("#displayAllEventsSection").append("<h1>" + object.title);
         });
-       //$("#displayAllEventsSection").append("<h1>" + data[0].title );
-            
+        //$("#displayAllEventsSection").append("<h1>" + data[0].title );
+
         if (data) {
             // If this post exists, prefill our cms forms with its data
             //displayEventsSection.val(data.newEventNameInput);
