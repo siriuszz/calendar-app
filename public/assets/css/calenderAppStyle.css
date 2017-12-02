@@ -19,7 +19,6 @@ h1 {
     color: rgb(224, 0, 22);
 }
 
-
 p {
     color: black;
 }
@@ -49,4 +48,13 @@ hr:before {
 .btn btn-default {
     background-color: white;
     color: rgb(224, 0, 22);
+
+}
+
+
+
+/* CP added this. It's just dummy code to display our Events... */
+#eventsDisplayContainer {
+    background-color: black;
+
 }
