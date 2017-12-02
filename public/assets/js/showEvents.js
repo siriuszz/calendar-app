@@ -15,4 +15,3 @@ $("#goToAddEventsPageButton").on("click", ((event) => {
 }));
 
 
-console.log("Testing new Event console submission " + newEvent);

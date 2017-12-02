@@ -20,6 +20,7 @@ module.exports = (app) => {
         db.Event.findAll({})
             .then(function (dbEvent) {
                 res.json(dbEvent);
+                
             });
     });
 
