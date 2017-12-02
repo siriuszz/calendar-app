@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
         //Event belongs to a user
         Event.belongsTo(models.User, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
     };

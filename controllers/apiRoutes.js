@@ -16,6 +16,14 @@ module.exports = (app) => {
         res.json(req.body); //This returns an empty object right now since not doing anything yet
     });
 
+    app.get("/api/events/", function (req, res) {
+        db.Event.findAll({})
+            .then(function (dbEvent) {
+                res.json(dbEvent);
+                
+            });
+    });
+
 
 
     app.post("/api/updateEvents", (req, res) => {
@@ -28,6 +36,18 @@ module.exports = (app) => {
 
         // req.json(newEvent);
         // req.end();
+
+
+
+        db.Event.create({
+                title: req.body.newEventNameInput,
+                description: req.body.newEventDescriptionInput,
+                public: req.body.newEventPublicCheckbox
+            })
+            .then(function () {
+                //res.json(dbPost);
+            });
+
 
     });
 };
