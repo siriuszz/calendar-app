@@ -6,10 +6,7 @@ body {
     padding: 0 20rem 0 20rem;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 497078304e3d9a550d92ef1ed79a6231d21b66da
 h1 {
     color: rgb(244, 0, 22);
 }
@@ -28,10 +25,6 @@ p {
 
 hr {
     overflow: visible;
-<<<<<<< HEAD
-
-=======
->>>>>>> 497078304e3d9a550d92ef1ed79a6231d21b66da
     height: 30px;
     border-style: solid;
     border-color: black;
@@ -40,10 +33,6 @@ hr {
 }
 
 hr:before {
-<<<<<<< HEAD
-
-=======
->>>>>>> 497078304e3d9a550d92ef1ed79a6231d21b66da
     display: block;
     content: "";
     height: 30px;
@@ -54,14 +43,10 @@ hr:before {
     border-radius: 20px;
 }
 
-<<<<<<< HEAD
 .btn btn-default {
     background-color: white;
     color: rgb(224, 0, 22);
-=======
-.pure-button {
-    background-color: white;
-    color: rgb(224, 0, 22);
+
 }
 
 
@@ -69,5 +54,4 @@ hr:before {
 /* CP added this. It's just dummy code to display our Events... */
 #eventsDisplayContainer {
     background-color: black;
->>>>>>> 497078304e3d9a550d92ef1ed79a6231d21b66da
 }
