@@ -1,4 +1,5 @@
 
+
 // routes/index.js
 
 const express = require('express');
@@ -50,39 +51,66 @@ router.get(
 );
 
 
-module.exports = router;
 
 
 const path = require("path");
 
+const db = require("../models");
 
 
 
 module.exports = (app) => {
 
 
-    // displays JSON of all the friends
-    app.get("/api/userDashboard", (req, res) => {
-        //res.json(friends);
-        console.log("test");
 
-        res.json(newEvent);
+    app.get("/api/userDashboard", (req, res) => {
+
+        console.log("testing: GET api/userDashboard Route");
+
+
+        res.json(req.body); //This returns an empty object right now since not doing anything yet
     });
 
-    // app.post("/api/userDashboard", (req, res) => {
+    app.get("/api/events/", function (req, res) {
+        db.Event.findAll({})
+            .then(function (dbEvent) {
+                res.json(dbEvent);
+                
+            });
+    });
 
-    //     //const newEventName = req.body.newEventDescription;
 
-    // });
-// api/updateEvents
-    app.post("/api/updateEvents", (req, res) =>{
-        console.log("testing");
+
+    app.post("/api/updateEvents", (req, res) => {
+
+        console.log("testing api/updateEvents");
         console.log(req.body);
 
         res.json(req.body);
 
+
         // req.json(newEvent);
         // req.end();
+
+
+
+        db.Event.create({
+                title: req.body.newEventNameInput,
+                description: req.body.newEventDescriptionInput,
+                public: req.body.newEventPublicCheckbox
+            })
+            .then(function () {
+                //res.json(dbPost);
+            });
+
+
     });
+
 };
+
+
+module.exports = router;
+
+
+
 
