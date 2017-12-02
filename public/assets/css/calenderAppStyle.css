@@ -25,7 +25,6 @@ p {
 
 hr {
     overflow: visible;
-
     height: 30px;
     border-style: solid;
     border-color: black;
@@ -34,7 +33,6 @@ hr {
 }
 
 hr:before {
-
     display: block;
     content: "";
     height: 30px;
@@ -56,5 +54,4 @@ hr:before {
 /* CP added this. It's just dummy code to display our Events... */
 #eventsDisplayContainer {
     background-color: black;
-
 }
