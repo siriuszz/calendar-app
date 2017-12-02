@@ -1,14 +1,27 @@
+$(document).ready(function() {
+
 const displayEventsSection = $("#displayAllEventsSection");
 
 
 $.get("/api/events/", function (data) {
+    //console.log(data.id);
+
     if (data) {
         // If this post exists, prefill our cms forms with its data
-        displayEventsSection.val(data.newEventNameInput);
-        displayEventsSection.val(data.title);
+        //displayEventsSection.val(data.newEventNameInput);
+        //displayEventsSection.val(data.title);
 
-        console.log(displayEventsSection.val(data.newEventNameInput));
-        console.log(displayEventsSection.val(data.title));
+        //console.log(displayEventsSection.val(data.newEventNameInput));
+        //console.log(displayEventsSection.val(data.title));
+
+        // $("#displayEventsSection").html(data.newEventNameInput);
+        //$("#displayEventsSection").text(data);
+        console.log("testing this out",data);
+        //console.log(data.body.title);
+        
+
+        
+
 
 
         // bodyInput.val(data.body);
@@ -33,5 +46,4 @@ $("#goToAddEventsPageButton").on("click", ((event) => {
 
 }));
 
-
-
+});
