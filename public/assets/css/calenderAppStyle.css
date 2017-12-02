@@ -58,10 +58,14 @@ hr:before {
 .btn btn-default {
     background-color: white;
     color: rgb(224, 0, 22);
+<<<<<<< HEAD
 =======
 .pure-button {
     background-color: white;
     color: rgb(224, 0, 22);
+=======
+
+>>>>>>> fd9c488462bda9b7370b269936d072493e8fa57a
 }
 
 
@@ -69,5 +73,9 @@ hr:before {
 /* CP added this. It's just dummy code to display our Events... */
 #eventsDisplayContainer {
     background-color: black;
+<<<<<<< HEAD
 >>>>>>> 497078304e3d9a550d92ef1ed79a6231d21b66da
+=======
+
+>>>>>>> fd9c488462bda9b7370b269936d072493e8fa57a
 }
