@@ -16,6 +16,13 @@ module.exports = (app) => {
         res.json(req.body); //This returns an empty object right now since not doing anything yet
     });
 
+    app.get("/api/events/", function (req, res) {
+        db.Event.findAll({})
+            .then(function (dbEvent) {
+                res.json(dbEvent);
+            });
+    });
+
 
 
     app.post("/api/updateEvents", (req, res) => {

@@ -1,13 +1,18 @@
+
+
 $("#goToAddEventsPageButton").on("click", ((event) => {
     event.preventDefault();
 
 
 
 
-    console.log("showEvents btn works");
+    
 
     window.location.replace('/userDashboard');
 
 
-
+    
 }));
+
+
+console.log("Testing new Event console submission " + newEvent);
