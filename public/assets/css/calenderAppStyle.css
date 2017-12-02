@@ -15,6 +15,10 @@ h1 {
     color: rgb(7, 0, 2);
 }
 
+html {
+    height: 100%;
+}
+
 .categories {
     color: rgb(224, 0, 22);
 }
