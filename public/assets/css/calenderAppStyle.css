@@ -6,17 +6,17 @@ body {
     padding: 0 20rem 0 20rem;
 }
 
-	h1 {
-		color: rgb(244, 0, 22);
 
+h1 {
+    color: rgb(244, 0, 22);
 }
 
 .pure-menu-link {
-	color: rgb(7, 0, 2); 
+    color: rgb(7, 0, 2);
 }
 
 .categories {
-	color: rgb(224, 0, 22);
+    color: rgb(224, 0, 22);
 }
 
 
@@ -26,7 +26,7 @@ p {
 
 hr {
     overflow: visible;
-    
+
     height: 30px;
     border-style: solid;
     border-color: black;
@@ -35,7 +35,7 @@ hr {
 }
 
 hr:before {
-    
+
     display: block;
     content: "";
     height: 30px;
@@ -46,7 +46,7 @@ hr:before {
     border-radius: 20px;
 }
 
-.pure-button {
-	background-color: white;
-	color: rgb(224, 0, 22);
+.btn btn-default {
+    background-color: white;
+    color: rgb(224, 0, 22);
 }
