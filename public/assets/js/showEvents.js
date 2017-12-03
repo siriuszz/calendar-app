@@ -9,7 +9,9 @@ $(document).ready(function () {
 
         const displayData = data;
         displayData.forEach((object) => {
-            $("#displayAllEventsSection").append("<h1>" + object.title);
+            $("#displayAllEventsSection").append("<br>");
+            $("#displayAllEventsSection").append("<h2>" + object.title);
+            $("#displayAllEventsSection").append("<h3>" + object.date);
         });
         //$("#displayAllEventsSection").append("<h1>" + data[0].title );
 

@@ -56,7 +56,10 @@ hr:before {
 
 
 
-/* CP added this. It's just dummy code to display our Events... */
+
 #eventsDisplayContainer {
-    background-color: black;
+    background-color: white;
+    max-width: 500px;
+    min-width: 200px;
 }
+
