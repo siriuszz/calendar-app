@@ -1,19 +1,19 @@
 $(document).ready(function () {
 
-    const displayEventsSection = $("#displayAllEventsSection");
+    const displayEventsSection = $("#eventTitle");
 
 
     $.get("/api/events/", function (data) {
         //console.log(data.id);
-        $("#displayAllEventsSection").append("<h1>" + data[0].title);
+        $("#eventTitle").append("<h1>" + data[0].title);
 
         const displayData = data;
         displayData.forEach((object) => {
-            $("#displayAllEventsSection").append("<br>");
-            $("#displayAllEventsSection").append("<h2>" + object.title);
-            $("#displayAllEventsSection").append("<h3>" + object.date);
+            $("#eventTitle").append("<br>");
+            $("#eventTitle").append("<h2>" + object.title);
+            $("#eventTitle").append("<h3>" + object.date);
         });
-        //$("#displayAllEventsSection").append("<h1>" + data[0].title );
+        //$("#eventTitle").append("<h1>" + data[0].title );
 
         if (data) {
             // If this post exists, prefill our cms forms with its data
@@ -24,7 +24,7 @@ $(document).ready(function () {
             //console.log(displayEventsSection.val(data.title));
 
             //$("#displayEventsSection").html(data.title);
-            $("#displayAllEventsSection").append(data);
+            $("#eventTitle").append(data);
             console.log("testing this out", data);
 
 
