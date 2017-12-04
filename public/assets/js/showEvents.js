@@ -14,11 +14,16 @@ $(document).ready(function () {
                 eventsSection.append("<p>" + object.description);
                 eventsSection.append("<br>");
 
-                //eventsSection.append("<p>" + object.description + "</p>");
 
                 $("#eventsDisplay").append(eventsSection);
-                eventsSection.append("<button>");
-                
+
+                const individualEventButton = $("<button/>",{
+                    text: "update",
+                });
+                // individualEventButton.append('<input type="button" value="My button">').button();
+                individualEventButton.addClass("individualEventButton");
+                eventsSection.append(individualEventButton);
+        
             });
         } else {
             console.log("ERROR GETTING DATA");
