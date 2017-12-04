@@ -7,7 +7,6 @@ body {
     padding: 0 20rem 0 20rem;
 }
 
-
 h1 {
     color: rgb(244, 0, 22);
 }
@@ -51,15 +50,10 @@ hr:before {
 .btn btn-default {
     background-color: white;
     color: rgb(224, 0, 22);
-
 }
-
-
-
 
 #eventsDisplayContainer {
     background-color: white;
     max-width: 500px;
     min-width: 200px;
 }
-
