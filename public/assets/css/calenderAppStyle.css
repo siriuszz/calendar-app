@@ -62,3 +62,22 @@ hr:before {
     /* font-size: 20px; */
     /* flex: 0 0 150px; */
 }
+
+.event {
+    background-color: rgb(178, 248, 178);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -90px;
+    margin-right: 0px;
+    min-width: 160px;
+    min-width: 400px;
+}
+
+.event h2 {
+    color: darkblue;
+    text-align: center;
+}
+
