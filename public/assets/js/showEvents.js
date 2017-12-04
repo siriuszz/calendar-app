@@ -1,37 +1,38 @@
-const displayEventsSection = $("#displayAllEventsSection");
+$(document).ready(function () {
+
+    $.get("/api/events/", function (data) {
+        if (data) {
+            const displayData = data;
+
+            displayData.forEach((object) => {
+                const eventsSection = $("<div>");
+                eventsSection.addClass("event");
+
+                // eventsSection.append("<h2>" + object.title + " event.. </p>");
+                eventsSection.append("<h2>" + object.title);
+                eventsSection.append("<h3>" + object.date);
+                eventsSection.append("<p>" + object.description);
+                eventsSection.append("<br>");
 
 
-$.get("/api/events/", function (data) {
-    if (data) {
-        // If this post exists, prefill our cms forms with its data
-        displayEventsSection.val(data.newEventNameInput);
-        displayEventsSection.val(data.title);
+                $("#eventsDisplay").append(eventsSection);
 
-        console.log(displayEventsSection.val(data.newEventNameInput));
-        console.log(displayEventsSection.val(data.title));
+                const individualEventButton = $("<button/>", {
+                    text: "update",
+                });
+                // individualEventButton.append('<input type="button" value="My button">').button();
+                individualEventButton.addClass("individualEventButton");
+                eventsSection.append(individualEventButton);
 
+            });
+        } else {
+            console.log("ERROR GETTING DATA");
+        }
+    });
 
-        // bodyInput.val(data.body);
-        // postCategorySelect.val(data.category);
-        // // If we have a post with this id, set a flag for us to know to update the post
-        // // when we hit submit
-        // updating = true;
-    }
+    $("#goToAddEventsPageButton").on("click", ((event) => {
+        event.preventDefault();
+
+        window.location.replace('/userDashboard');
+    }));
 });
-
-$("#goToAddEventsPageButton").on("click", ((event) => {
-    event.preventDefault();
-
-
-
-
-
-
-    window.location.replace('/userDashboard');
-
-
-
-}));
-
-
-

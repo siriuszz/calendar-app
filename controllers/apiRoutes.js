@@ -49,6 +49,34 @@ module.exports = (app) => {
                 //res.json(dbPost);
             });
 
-
     });
+
+    //======STAR=====DELETE and PUT routes ====================
+        // DELETE route for deleting events
+        app.delete("/api/events/:id", function(req, res) {
+            db.Event.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+                .then(function(dbEvent) {
+                    res.json(dbEvent);
+                });
+        });
+
+        // PUT route for updating events
+        app.put("/api/events", function(req, res) {
+            db.Event.update(req.body,
+                {
+                    where: {
+                        id: req.body.id
+                    }
+                })
+                .then(function(dbEvent) {
+                    res.json(dbEvent);
+                });
+        });
+    //======END-STAR=====DELETE and PUT routes ================
+
+
 };
