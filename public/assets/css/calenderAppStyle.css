@@ -3,6 +3,7 @@ body {
     background: url("http://jackalope-larp.com/wp-content/uploads/2017/08/calendar-1024x576.jpg");
     background-size: cover;
     background-position: center;
+    color: white;
     font-family: "Ubuntu";
     padding: 0 20rem 0 20rem;
 }
@@ -28,7 +29,7 @@ html {
 }
 
 p {
-    color: black;
+    color: white;
 }
 
 hr {
