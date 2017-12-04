@@ -18,7 +18,7 @@ $(document).ready(function () {
                 $("#eventsDisplay").append(eventsSection);
 
                 const individualEventButton = $("<button/>", {
-                    text: "update",
+                    text: "DELETE",
                 });
                 // individualEventButton.append('<input type="button" value="My button">').button();
                 individualEventButton.addClass("individualEventButton");
