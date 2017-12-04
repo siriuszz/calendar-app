@@ -1,61 +1,38 @@
 $(document).ready(function () {
 
-    const displayEventsSection = $("#displayAllEventsSection");
-
-
     $.get("/api/events/", function (data) {
-        //console.log(data.id);
-        $("#displayAllEventsSection").append("<h1>" + data[0].title);
-
-        const displayData = data;
-        displayData.forEach((object) => {
-            $("#displayAllEventsSection").append("<h1>" + object.title);
-        });
-        //$("#displayAllEventsSection").append("<h1>" + data[0].title );
-
         if (data) {
-            // If this post exists, prefill our cms forms with its data
-            //displayEventsSection.val(data.newEventNameInput);
-            //displayEventsSection.val(data.title);
+            const displayData = data;
 
-            //console.log(displayEventsSection.val(data.newEventNameInput));
-            //console.log(displayEventsSection.val(data.title));
+            displayData.forEach((object) => {
+                const eventsSection = $("<div>");
+                eventsSection.addClass("event");
 
-            //$("#displayEventsSection").html(data.title);
-            $("#displayAllEventsSection").append(data);
-            console.log("testing this out", data);
-
-
-            console.log(data[0].title);
+                // eventsSection.append("<h2>" + object.title + " event.. </p>");
+                eventsSection.append("<h2>" + object.title);
+                eventsSection.append("<h3>" + object.date);
+                eventsSection.append("<p>" + object.description);
+                eventsSection.append("<br>");
 
 
+                $("#eventsDisplay").append(eventsSection);
 
-
-
-
-
-
-
-            // bodyInput.val(data.body);
-            // postCategorySelect.val(data.category);
-            // // If we have a post with this id, set a flag for us to know to update the post
-            // // when we hit submit
-            // updating = true;
+                const individualEventButton = $("<button/>",{
+                    text: "update",
+                });
+                // individualEventButton.append('<input type="button" value="My button">').button();
+                individualEventButton.addClass("individualEventButton");
+                eventsSection.append(individualEventButton);
+        
+            });
+        } else {
+            console.log("ERROR GETTING DATA");
         }
     });
 
     $("#goToAddEventsPageButton").on("click", ((event) => {
         event.preventDefault();
 
-
-
-
-
-
         window.location.replace('/userDashboard');
-
-
-
     }));
-
 });

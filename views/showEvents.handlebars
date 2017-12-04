@@ -1,34 +1,42 @@
 <h1>SHOW EVENTS PAGE WHERE WE WANT TO DISPLAY ALL OF OUR EVENTS!</h1>
 
+<div class="container">
+<div class="container" id="AddMoreEventsButtonDiv">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <button class="btn btn-primary active" id="goToAddEventsPageButton">Add Events</button>
+
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row" id ="eventsDisplayContainer">
         {{!-- CP: this col-md offset was added by me just copied some old code.  Feel free to play w/ --}}
         <div class="col-md-6 col-md-offset-3">
-            Display Events somewhere like here...
-            <div id="displayAllEventsSection">
+            {{!-- Where Events will be displayed --}}
+            <div id="eventsDisplay" class="eventsDisplayStyle">
 
             </div>
-            
+
+            <div class="eventTitle">
+
+            </div>
+
+            <div class="eventDate">
+
+            </div>
+
+            <div class="eventDescription">
+
+            </div>
+
+
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
 
-            <button class="btn btn-primary active" id="goToAddEventsPageButton">Add More Events!</button>
-
-            <button class="btn btn-secondary" id="goToAddEventsPageButton">Add More Events!</button>
-
-            <button class="btn btn-secondary" id="goToAddEventsPageButton">Add More Events!</button>
-
-            <button class="btn btn-secondary" id="goToAddEventsPageButton">Add More Events!</button>
-
-            <button class="btn btn-secondary" id="goToAddEventsPageButton">Add More Events!</button>
-
-        </div>
-    </div>
 </div>
 
 <script src="assets/js/showEvents.js"> </script>
