@@ -62,6 +62,9 @@ hr:before {
     margin: 20px;
 }
 
+
+/* CP added this. It's just dummy code to display our Events... */
+
 .individualEventButton {
     background-color: lightgrey;
     min-width: 30px;
@@ -71,6 +74,7 @@ hr:before {
     border-width: 2px;
     border-color: black;
 }
+
 
 #eventsDisplayContainer {
     background-color: white;
