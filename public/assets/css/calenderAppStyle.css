@@ -3,10 +3,14 @@ body {
     background: url("http://jackalope-larp.com/wp-content/uploads/2017/08/calendar-1024x576.jpg");
     background-size: cover;
     background-position: center;
+    color: white;
     font-family: "Ubuntu";
     padding: 0 20rem 0 20rem;
 }
 
+.nav {
+    /* width: 100%; */
+}
 
 h1 {
     color: rgb(244, 0, 22);
@@ -25,7 +29,7 @@ html {
 }
 
 p {
-    color: black;
+    color: white;
 }
 
 hr {
@@ -51,11 +55,57 @@ hr:before {
 .btn btn-default {
     background-color: white;
     color: rgb(224, 0, 22);
+}
 
+#AddMoreEventsButtonDiv {
+    float: left;
+    margin: 20px;
 }
 
 
 /* CP added this. It's just dummy code to display our Events... */
-#eventsDisplayContainer {
-    background-color: black;
+
+.individualEventButton {
+    background-color: lightgrey;
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
 }
+
+
+#eventsDisplayContainer {
+    background-color: white;
+    max-width: 500px;
+    min-width: 200px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: black;
+    /* font-size: 20px; */
+    /* flex: 0 0 150px; */
+}
+
+.event {
+    background-color: rgb(178, 248, 178);
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -90px;
+    margin-right: 0px;
+    min-width: 160px;
+    min-width: 400px;
+}
+
+.event h2 {
+    color: darkblue;
+    text-align: center;
+}
+
+.event h3 {
+    text-align: center;
+}
+
