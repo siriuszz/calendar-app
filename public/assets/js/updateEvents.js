@@ -9,6 +9,7 @@ $("#submit").on("click", ((event) => {
         //checks to see if the Public checkbox is check.  If so it will return true and versa
         newEventPublicCheckbox: $("#publicCheck").is(':checked'),
         newEventDescriptionInput: $("#newEventDescriptionInput").val().trim(),
+
     };
 
     console.log(newEvent);

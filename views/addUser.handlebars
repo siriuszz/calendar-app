@@ -1,0 +1,61 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Social Board</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="/userDashboard">New Event</a>
+            </li>
+            <li>
+                <a href="#">Page 2</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="user-container">
+                <h1>Users</h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>User's Events</th>
+                        <th>New Event</th>
+                        <th>Delete User</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="form-row">
+                        <form id="user-form">
+                            <td colspan="4">
+                                <input placeholder="Enter a name" id="user-name" type="text" />
+                            </td>
+                            <td><button type="submit" class="btn btn-default">Create User</button>
+                            </td>
+                        </form>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/updateEvents.js"> </script>

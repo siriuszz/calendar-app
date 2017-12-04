@@ -34,6 +34,14 @@ module.exports = (app) => {
 
     });
 
+    //Add User page. Where we plan to add users.
+    app.get("/addUser", (req, res) => {
+        res.render('addUser', {
+
+    });
+
+});
+
     //If no matching route is found, we default to home
     app.get("*", (req, res) => {
         //res.sendFile(path.join(__dirname, "../public/home.html"));

@@ -79,4 +79,36 @@ module.exports = (app) => {
     //======END-STAR=====DELETE and PUT routes ================
 
 
+    //=====STAR=====ROUTES for USERS ==========================
+
+    // Find a user
+    app.get("/api/users/:id", function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+
+    // Create a user
+    app.post("/api/users", function(req, res) {
+        console.log(req.body);
+        db.User.create(req.body).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+
+    // Delete the user
+    app.delete("/api/users/:id", function(req, res) {
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+    //======END - STAR ====ROUTES for USERS ====================
 };
