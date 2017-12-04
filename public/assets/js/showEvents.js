@@ -17,13 +17,13 @@ $(document).ready(function () {
 
                 $("#eventsDisplay").append(eventsSection);
 
-                const individualEventButton = $("<button/>",{
+                const individualEventButton = $("<button/>", {
                     text: "update",
                 });
                 // individualEventButton.append('<input type="button" value="My button">').button();
                 individualEventButton.addClass("individualEventButton");
                 eventsSection.append(individualEventButton);
-        
+
             });
         } else {
             console.log("ERROR GETTING DATA");
