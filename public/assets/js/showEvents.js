@@ -11,10 +11,6 @@ $(document).ready(function () {
                 const eventsSection = $("<div>");
                 eventsSection.addClass("event");
 
-                // $(".individualEventButton").data('id', eventId); //adds data-id to each individual button
-
-                console.log(eventId);
-
                 eventsSection.append("<h2>" + object.title);
                 eventsSection.append("<h3>" + object.date);
                 eventsSection.append("<p>" + object.description);
@@ -23,7 +19,7 @@ $(document).ready(function () {
                 const individualEventButton = $("<button/>", {
                     text: "DELETE",
                 });
-
+                
                 eventsSection.append(individualEventButton);
                 individualEventButton.data('id', eventId);
                 individualEventButton.addClass("individualEventButton");
@@ -37,7 +33,6 @@ $(document).ready(function () {
         const id = $(this).data("id");
         console.log("Show Id: " + id);
 
-        //debugger;
         // Send the DELETE request.
         $.ajax("/api/events/" + id, {
             type: "DELETE"
