@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready( () => {
 
     $(document).on("click", ".individualEventButton", handleEventDelete);
 
