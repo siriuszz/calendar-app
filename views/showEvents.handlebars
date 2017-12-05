@@ -1,0 +1,54 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Social Board</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="/showEvents">Home</a>
+            </li>
+            <li>
+                <a href="/userDashboard">New Event</a>
+            </li>
+            <li>
+                <a href="#">Page 2</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="container" id="AddMoreEventsButtonDiv">
+        <div class="row">
+            <div>
+
+                <button class="btn btn-default" id="goToAddEventsPageButton">Add Events</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id ="eventsDisplayContainer">
+        {{!-- CP: this col-md offset was added by me just copied some old code.  Feel free to play w/ --}}
+        <div class="col-md-6">
+            {{!-- Where Events will be displayed --}}
+            <div id="eventsDisplay" class="eventsDisplayStyle">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="assets/js/showEvents.js"> </script>

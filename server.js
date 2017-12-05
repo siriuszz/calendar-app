@@ -60,7 +60,6 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-
 // points our server to our different "route" files.
 // This gives the server a "map" to respond when users visit or request data from various URLs.
 // Must be placed below const app otherwise will return undefined!
@@ -79,7 +78,8 @@ require("./controllers/htmlRoutes.js")(app);
 //     console.log("App listening on PORT: " + PORT);
 // });
 
-db.sequelize.sync({ force: true }).then(function() {
+
+db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });

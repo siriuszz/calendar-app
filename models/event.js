@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Event = sequelize.define("Event", {
         title: {
             type: DataTypes.STRING,
@@ -11,18 +11,18 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT
         },
         date: {
-            type: DataTypes.DATE
+            type: DataTypes.STRING
         },
         public: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.BOOLEAN
         }
     });
 
-    Event.associate = function(models) {
+    Event.associate = function (models) {
         //Event belongs to a user
         Event.belongsTo(models.User, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
     };
