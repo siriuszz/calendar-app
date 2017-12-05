@@ -3,8 +3,9 @@ body {
     background: url("http://jackalope-larp.com/wp-content/uploads/2017/08/calendar-1024x576.jpg");
     background-size: cover;
     background-position: center;
+    color: white;
     font-family: "Ubuntu";
-    padding: 0 20rem 0 20rem;
+    /*padding: 0 20rem 0 20rem;*/
 }
 
 .nav {
@@ -28,7 +29,7 @@ html {
 }
 
 p {
-    color: black;
+    color: white;
 }
 
 hr {
@@ -56,51 +57,59 @@ hr:before {
     color: rgb(224, 0, 22);
 }
 
-#AddMoreEventsButtonDiv {
-    float: left;
-    margin: 20px;
-}
+/*#goToAddEventsPageButton {*/
+/*float: left;*/
+/*}*/
 
 .individualEventButton {
-    background-color: lightgrey;
-    min-width: 30px;
-    min-height: 30px;
-    margin-left: 10px;
+    background-color: white;
+    color: black;
+    /*min-width: 30px;*/
+    /*min-height: 30px;*/
+    margin: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+/*#eventsDisplayContainer {*/
+/*!*background-color: white;*!*/
+/*!*max-width: 500px;*!*/
+/*!*min-width: 200px;*!*/
+/*border: none;*/
+/*!* font-size: 20px; *!*/
+/*!* flex: 0 0 150px; *!*/
+/*}*/
+
+.event {
+    background-color: white;
     border-style: solid;
     border-width: 2px;
     border-color: black;
-}
-
-#eventsDisplayContainer {
-    background-color: white;
-    max-width: 500px;
-    min-width: 200px;
-    border-style: solid;
-    border-width: 8px;
-    border-color: black;
-    /* font-size: 20px; */
-    /* flex: 0 0 150px; */
-}
-
-.event {
-    background-color: rgb(178, 248, 178);
-    border-style: solid;
-    border-width: 5px;
-    border-color: black;
+    border-radius: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: -90px;
+    /*margin-left: -50px;*/
     margin-right: 0px;
-    min-width: 160px;
-    min-width: 400px;
 }
 
 .event h2 {
-    color: darkblue;
-    text-align: center;
+    color: rgb(224, 0, 22);
+    margin: 10px;
+    font-size: xx-large;
+    text-align: left;
 }
 
 .event h3 {
-    text-align: center;
+    color: black;
+    margin: 10px;
+    font-size: medium;
+    text-align: left;
+}
+
+.event p {
+    color: black;
+    margin: 10px;
+    text-align: left;
 }
 

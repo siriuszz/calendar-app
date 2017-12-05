@@ -1,47 +1,89 @@
-$("#submit").on("click", ((user) {
-    user.preventDefault();
+$(document).ready(function() {
 
-    // Getting the users, and their events
+    var nameInput = $("#user-name");
+    var userList = $("tbody");
+    var userContainer = $(".user-container");
+
+    // Event listeners to create a new object and delete a user
+    $(document).on("submit", "#user-form", handleUserFormSubmit);
+    $(document).on("click", ".delete-user", handleDeleteButtonPress);
+
+    // Get the list of users
     getUsers();
 
+    function handleUserFormSubmit(event) {
+        event.preventDefault();
 
-    // A function to get users and then render list of users
+        // Don't do anything if the name fields hasn't been filled out
+        if (!nameInput.val().trim().trim()) {
+            return;
+        }
+
+        insertUser({
+            name: nameInput
+                .val()
+                .trim()
+        });
+    }
+
+    // Create a user.
+    function insertUser(userData) {
+        $.post("/api/users", userData)
+            .then(getUsers);
+    }
+
+    // Create row of users
+    function createUserRow(userData) {
+        console.log(userData);
+        var newTr = $("<tr>");
+        newTr.data("users", userData);
+        newTr.append("<td>" + userData.name + "</td>");
+        newTr.append("<td><a href='/userDashboard?user_id=" + userData.id + "'>Create an Event</a></td>");
+        newTr.append("<td><a class='delete-user'>Delete Author</a></td>");
+        return newTr;
+    }
+
+    // Retrieve users
     function getUsers() {
-        $.get("/api/users", renderUserList);
-    }
-    // Function to either render a list of users or go to Add User page
-    function renderUserList(data) {
-        if (!data.length) {
-            window.location.href = "/users";
-        }
-        var rowsToAdd = [];
-        for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createUserRow(data[i]));
-        }
-        userSelect.empty();
-        console.log(rowsToAdd);
-        console.log(userSelect);
-        userSelect.append(rowsToAdd);
-        userSelect.val(userId);
+        $.get("/api/users", function(data) {
+            var rowsToAdd = [];
+            for (var i = 0; i < data.length; i++) {
+                rowsToAdd.push(createUserRow(data[i]));
+            }
+            renderAuthorList(rowsToAdd);
+            nameInput.val("");
+        });
     }
 
-    // Create the user list in the dropdown
-    function createUserRow(user) {
-        var listOption = $("<option>");
-        listOption.attr("value", user.id);
-        listOption.text(user.name);
-        return listOption;
+    // List users
+    function renderUserList(rows) {
+        userList.children().not(":last").remove();
+        userContainer.children(".alert").remove();
+        if (rows.length) {
+            console.log(rows);
+            userList.prepend(rows);
+        }
+        else {
+            renderEmpty();
+        }
     }
 
-    // Update a given event, then land on the dashboard
-    function updateEvent(event) {
+    // // When there are no users
+    // function renderEmpty() {
+    //     var alertDiv = $("<div>");
+    //     alertDiv.addClass("alert alert-default");
+    //     alertDiv.text("You must create an Author before you can create a Post.");
+    //     authorContainer.append(alertDiv);
+    // }
+
+    // Deleting a user
+    function handleDeleteButtonPress() {
+        var listItemData = $(this).parent("td").parent("tr").data("user");
+        var id = listItemData.id;
         $.ajax({
-            method: "PUT",
-            url: "/api/events",
-            data: event
+            method: "DELETE",
+            url: "/api/users/" + id
         })
-            .done(function() {
-                window.location.href = "/userDashboard";
-            });
+            .done(getUsers);
     }
 });
