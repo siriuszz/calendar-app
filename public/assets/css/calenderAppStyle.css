@@ -58,11 +58,16 @@ hr:before {
 }
 
 /*#goToAddEventsPageButton {*/
+<<<<<<< HEAD
     /*float: left;*/
 /*}*/
 
 
 /* CP added this. It's just dummy code to display our Events... */
+=======
+/*float: left;*/
+/*}*/
+>>>>>>> 3d401dcd54588646e46504465f50476aa2feaf0d
 
 .individualEventButton {
     background-color: white;
@@ -74,6 +79,7 @@ hr:before {
     border-width: 1px;
     border-color: black;
 }
+<<<<<<< HEAD
 
 
 /*#eventsDisplayContainer {*/
@@ -83,6 +89,17 @@ hr:before {
     /*border: none;*/
     /*!* font-size: 20px; *!*/
     /*!* flex: 0 0 150px; *!*/
+/*}*/
+=======
+>>>>>>> 3d401dcd54588646e46504465f50476aa2feaf0d
+
+/*#eventsDisplayContainer {*/
+/*!*background-color: white;*!*/
+/*!*max-width: 500px;*!*/
+/*!*min-width: 200px;*!*/
+/*border: none;*/
+/*!* font-size: 20px; *!*/
+/*!* flex: 0 0 150px; *!*/
 /*}*/
 
 .event {
