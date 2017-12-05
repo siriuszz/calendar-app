@@ -42,7 +42,8 @@ router.get('/logout', (req, res) => {
 router.get(
   '/callback',
   passport.authenticate('auth0', {
-    failureRedirect: '/login'
+    failureRedirect: '/login',
+    successRedirect:'/userDashboard'
   }),
   function(req, res) {
     res.redirect(req.session.returnTo || '/user');
@@ -57,32 +58,4 @@ const path = require("path");
 
 
 
-
-module.exports = (app) => {
-
-
-    // displays JSON of all the friends
-    app.get("/api/userDashboard", (req, res) => {
-        //res.json(friends);
-        console.log("test");
-
-        res.json(newEvent);
-    });
-
-    // app.post("/api/userDashboard", (req, res) => {
-
-    //     //const newEventName = req.body.newEventDescription;
-
-    // });
-// api/updateEvents
-    app.post("/api/updateEvents", (req, res) =>{
-        console.log("testing");
-        console.log(req.body);
-
-        res.json(req.body);
-
-        // req.json(newEvent);
-        // req.end();
-    });
-};
 
