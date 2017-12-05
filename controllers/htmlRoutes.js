@@ -2,12 +2,10 @@ const path = require("path");
 
 
 
-
 module.exports = (app) => {
     app.get("/", (req, res) => {
-        //res.sendFile(path.join(__dirname, "../public/survey.html"));
         
-        res.render('index', {
+        res.render('showEvents', {
             
         });
     });
@@ -36,8 +34,7 @@ module.exports = (app) => {
 
     //If no matching route is found, we default to home
     app.get("*", (req, res) => {
-        //res.sendFile(path.join(__dirname, "../public/home.html"));
-        //res.send("this is the catch all route");
+        
         res.redirect("/");
     });
 

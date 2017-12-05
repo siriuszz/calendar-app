@@ -8,9 +8,6 @@ body {
     /*padding: 0 20rem 0 20rem;*/
 }
 
-.nav {
-    /* width: 100%; */
-}
 
 h1 {
     color: rgb(244, 0, 22);
@@ -104,6 +101,7 @@ hr:before {
     border-style: solid;
     border-width: 2px;
     border-color: black;
+    border-radius: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
     /*margin-left: -50px;*/

@@ -1,5 +1,4 @@
 const path = require("path");
-
 const db = require("../models");
 
 
@@ -7,24 +6,17 @@ const db = require("../models");
 module.exports = (app) => {
 
 
-
     app.get("/api/userDashboard", (req, res) => {
 
-        console.log("testing: GET api/userDashboard Route");
-
-
-        res.json(req.body); //This returns an empty object right now since not doing anything yet
+        res.json(req.body); 
     });
 
     app.get("/api/events/", function (req, res) {
         db.Event.findAll({})
             .then(function (dbEvent) {
                 res.json(dbEvent);
-                
             });
     });
-
-
 
     app.post("/api/updateEvents", (req, res) => {
 
@@ -32,12 +24,6 @@ module.exports = (app) => {
         console.log(req.body);
 
         res.json(req.body);
-
-
-        // req.json(newEvent);
-        // req.end();
-
-
 
         db.Event.create({
                 title: req.body.newEventNameInput,
@@ -48,34 +34,32 @@ module.exports = (app) => {
             .then(function () {
                 //res.json(dbPost);
             });
-
     });
 
     //======STAR=====DELETE and PUT routes ====================
-        // DELETE route for deleting events
-        app.delete("/api/events/:id", function(req, res) {
-            db.Event.destroy({
+    // DELETE route for deleting events
+    app.delete("/api/events/:id", function (req, res) {
+        db.Event.destroy({
                 where: {
                     id: req.params.id
                 }
             })
-                .then(function(dbEvent) {
-                    res.json(dbEvent);
-                });
-        });
+            .then(function (dbEvent) {
+                res.json(dbEvent);
+            });
+    });
 
-        // PUT route for updating events
-        app.put("/api/events", function(req, res) {
-            db.Event.update(req.body,
-                {
-                    where: {
-                        id: req.body.id
-                    }
-                })
-                .then(function(dbEvent) {
-                    res.json(dbEvent);
-                });
-        });
+    // PUT route for updating events
+    app.put("/api/events", function (req, res) {
+        db.Event.update(req.body, {
+                where: {
+                    id: req.body.id
+                }
+            })
+            .then(function (dbEvent) {
+                res.json(dbEvent);
+            });
+    });
     //======END-STAR=====DELETE and PUT routes ================
 
 

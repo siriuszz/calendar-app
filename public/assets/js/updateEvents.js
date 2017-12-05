@@ -18,9 +18,8 @@ $("#submit").on("click", ((event) => {
         // On success, run the following code
         .done(function () {
 
-
             console.log(newEvent);
-
+            
             //When you add this will redirect to showEvents page: to show all our events
             window.location.replace('/showEvents');
 
