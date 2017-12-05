@@ -1,5 +1,4 @@
 const path = require("path");
-
 const db = require("../models");
 
 
@@ -9,10 +8,7 @@ module.exports = (app) => {
 
     app.get("/api/userDashboard", (req, res) => {
 
-        console.log("testing: GET api/userDashboard Route");
-
-
-        res.json(req.body); //This returns an empty object right now since not doing anything yet
+        res.json(req.body); 
     });
 
     app.get("/api/events/", function (req, res) {
