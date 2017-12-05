@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $(document).on("click", ".individualEventButton", handleEventDelete);
+
     $.get("/api/events/", function (data) {
         if (data) {
             const displayData = data;
@@ -29,6 +31,32 @@ $(document).ready(function () {
             console.log("ERROR GETTING DATA");
         }
     });
+
+
+    // This function does an API call to delete posts
+    function deletePost(id) {
+        $.ajax({
+                method: "DELETE",
+                url: "/api/events/" + id
+            })
+            .done(function () {
+                //getPosts(postCategorySelect.val());
+                //want to reload page...
+            });
+    }
+
+
+    function handleEventDelete() {
+        console.log("testing button");
+        var currentEvent = $(this.id)
+            .parent()
+            .parent()
+            .data("event");
+        deletePost(currentEvent);
+    }
+
+
+
 
     $("#goToAddEventsPageButton").on("click", ((event) => {
         event.preventDefault();
