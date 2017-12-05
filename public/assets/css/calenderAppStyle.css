@@ -86,6 +86,7 @@ hr:before {
     border-style: solid;
     border-width: 2px;
     border-color: black;
+    border-radius: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
     /*margin-left: -50px;*/

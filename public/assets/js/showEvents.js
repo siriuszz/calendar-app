@@ -1,38 +1,52 @@
 $(document).ready(function () {
 
-    $.get("/api/events/", function (data) {
+    $(document).on("click", ".individualEventButton", handleEventDelete);
+
+    $.get("/api/events/", (data) => {
         if (data) {
             const displayData = data;
 
             displayData.forEach((object) => {
+                const eventId = object.id;
                 const eventsSection = $("<div>");
                 eventsSection.addClass("event");
 
-                // eventsSection.append("<h2>" + object.title + " event.. </p>");
                 eventsSection.append("<h2>" + object.title);
                 eventsSection.append("<h3>" + object.date);
                 eventsSection.append("<p>" + object.description);
-                eventsSection.append("<br>");
-
-
                 $("#eventsDisplay").append(eventsSection);
 
                 const individualEventButton = $("<button/>", {
-                    text: "update",
+                    text: "DELETE",
                 });
-                // individualEventButton.append('<input type="button" value="My button">').button();
-                individualEventButton.addClass("individualEventButton");
+                
                 eventsSection.append(individualEventButton);
-
+                individualEventButton.data('id', eventId);
+                individualEventButton.addClass("individualEventButton");
             });
         } else {
             console.log("ERROR GETTING DATA");
         }
     });
 
+    function handleEventDelete() {
+        const id = $(this).data("id");
+        console.log("Show Id: " + id);
+
+        // Send the DELETE request.
+        $.ajax("/api/events/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    }
+
     $("#goToAddEventsPageButton").on("click", ((event) => {
         event.preventDefault();
-
         window.location.replace('/userDashboard');
     }));
 });
